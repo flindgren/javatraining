@@ -4,24 +4,24 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class GameStepdefs {
-    private String secret;
-    private String guess;
+
+    private Game game;
 
     @Given("^a game with secret (.*)$")
     public void a_game_with_secret(String secret) throws Throwable {
-        this.secret = secret;
+        game = new Game(secret);
     }
 
     @When("^a guess is (.*)$")
     public void I_guess(String guess) throws Throwable {
-        this.guess = guess;
+        game.guess(guess);
     }
 
     @Then("^I win$")
     public void I_win() throws Throwable {
-        assertEquals(guess, secret);
+        assertTrue(game.isSolved());
     }
 }
