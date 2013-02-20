@@ -1,31 +1,20 @@
 package mastermind;
 
-public class Game {
-  public static final int DEFAULT_ROW_COUNT = 10;
-  private final String secret;
-  private int remainingRows;
-  private String guess;
+public class Game implements Runnable {
+    private final CodeMaker maker;
+    private final CodeBreaker breaker;
+    private final GameProgressHandler progressHandler;
+    private final GameConfiguration gameConfiguration;
 
-  public Game(String secret) {
-    this(secret, DEFAULT_ROW_COUNT);
-  }
+    public Game(CodeMaker maker, CodeBreaker breaker, GameProgressHandler progressHandler, GameConfiguration gameConfiguration) {
+        this.maker = maker;
+        this.breaker = breaker;
+        this.progressHandler = progressHandler;
+        this.gameConfiguration = gameConfiguration;
+    }
 
-  public Game(String secret, int rows) {
-    this.secret = secret;
-    this.remainingRows = rows;
-  }
-
-  public Game guess(String guess) {
-    this.guess = guess;
-    remainingRows --;
-    return this;
-  }
-
-  public boolean isSolved() {
-    return secret.equals(guess);
-  }
-
-  public boolean isLost() {
-    return !isSolved() && remainingRows < 1;
-  }
+    @Override
+    public void run() {
+        //To change body of implemented methods use File | Settings | File Templates.
+    }
 }

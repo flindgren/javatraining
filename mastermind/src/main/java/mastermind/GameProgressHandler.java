@@ -6,5 +6,5 @@ package mastermind;
 public interface GameProgressHandler {
     void guessProcessed(Object guess, Object key);
 
-    void gameCompleted(int pointsScored);
+    void gameCompleted(boolean solved, int pointsScored);
 }
