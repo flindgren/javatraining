@@ -12,9 +12,8 @@ public class GameTest {
         CodeMaker maker = null;
         CodeBreaker breaker = null;
         GameProgressHandler progressHandler = null;
-        GameConfiguration gameConfiguration = null;
 
-        Game game = new Game(maker, breaker, progressHandler, gameConfiguration);
+        Game game = new Game(maker, breaker, progressHandler);
     }
 
 

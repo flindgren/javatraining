@@ -4,7 +4,6 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
-import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -28,7 +27,7 @@ public class GameStepdefs implements CodeBreaker, CodeMaker, GameProgressHandler
 
     @Then("^The code was solved$")
     public void the_code_was_solved() throws Throwable {
-        new Game(this, this, this, new DefaultGameConfiguration()).run();
+        new Game(this, this, this).run();
         assertTrue(solved);
     }
 
@@ -53,20 +52,4 @@ public class GameStepdefs implements CodeBreaker, CodeMaker, GameProgressHandler
     }
 
 
-    private static class DefaultGameConfiguration implements GameConfiguration {
-        @Override
-        public int getCodeSize() {
-            return 4;
-        }
-
-        @Override
-        public int getBoardSize() {
-            return 10;
-        }
-
-        @Override
-        public List getAvailableColors() {
-            return Arrays.asList("R", "G", "B", "Y", "M", "C");
-        }
-    }
 }
