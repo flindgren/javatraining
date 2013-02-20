@@ -9,7 +9,7 @@ import java.util.List;
 
 import static org.junit.Assert.assertTrue;
 
-public class GameStepdefs implements CodeBreaker, CodeMaker, GameProgressHandler {
+public class GameStepdefs implements CodeBreaker, CodeMaker, GameListener {
 
     private String secret;
     private List<String> guesses = new LinkedList<>();

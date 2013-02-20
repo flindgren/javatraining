@@ -3,9 +3,9 @@ package mastermind;
 public class Game implements Runnable {
     private final CodeMaker maker;
     private final CodeBreaker breaker;
-    private final GameProgressHandler progressHandler;
+    private final GameListener progressHandler;
 
-    public Game(CodeMaker maker, CodeBreaker breaker, GameProgressHandler progressHandler) {
+    public Game(CodeMaker maker, CodeBreaker breaker, GameListener progressHandler) {
         this.maker = maker;
         this.breaker = breaker;
         this.progressHandler = progressHandler;

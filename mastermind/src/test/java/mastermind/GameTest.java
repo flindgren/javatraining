@@ -11,7 +11,7 @@ public class GameTest {
     public void creatingGameHasNoSideEffects() {
         CodeMaker maker = null;
         CodeBreaker breaker = null;
-        GameProgressHandler progressHandler = null;
+        GameListener progressHandler = null;
 
         Game game = new Game(maker, breaker, progressHandler);
     }
